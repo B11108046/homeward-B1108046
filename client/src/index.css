@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+    background-color: #F8F4EA;  /* 更暖的米色背景 */
+    color: #534741;  /* 更柔和的文字顏色 */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+:root {
+  --background: 39 38% 95%;    /* #F8F4EA */
+  --foreground: 25 25% 25%;    /* #534741 */
+  --muted: 34 25% 92%;         /* #F2E8DC */
+  --muted-foreground: 27 10% 40%;
+  --popover: 39 38% 98%;
+  --popover-foreground: 25 25% 25%;
+  --card: 39 38% 98%;
+  --card-foreground: 25 25% 25%;
+  --border: 32 50% 85%;        /* #EDD9BF */
+  --input: 32 50% 85%;         /* #EDD9BF */
+  --primary: 30 65% 80%;       /* #F2D0A4 */
+  --primary-foreground: 25 25% 25%;
+  --secondary: 34 25% 92%;     /* #F2E8DC */
+  --secondary-foreground: 25 25% 25%;
+  --accent: 20 30% 60%;        /* #D4A485 */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 30 65% 80%;          /* #F2D0A4 */
+  --radius: 0.5rem;
+
+  /* Custom colors */
+  --warm-tan: 30 65% 80%;      /* #F2D0A4 */
+  --soft-beige: 34 25% 92%;    /* #F2E8DC */
+  --deep-brown: 20 30% 40%;    /* #9A7259 */
+  --warm-white: 39 38% 95%;    /* #F8F4EA */
+  --soft-black: 25 25% 25%;    /* #534741 */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+/* Custom Classes */
+.section {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.section.active {
+  opacity: 1;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #F2D0A4;  /* warmTan */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.hashtag {
+  transition: all 0.3s ease;
+}
+
+.hashtag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-warmTan {
+  background-color: hsl(30, 65%, 80%);  /* #F2D0A4 */
+}
+
+.bg-softBeige {
+  background-color: hsl(34, 25%, 92%);  /* #F2E8DC */
+}
+
+.bg-deepBrown {
+  background-color: hsl(20, 30%, 40%);  /* #9A7259 */
+}
+
+.bg-warmWhite {
+  background-color: hsl(39, 38%, 95%);  /* #F8F4EA */
+}
+
+.text-deepBrown {
+  color: hsl(20, 30%, 40%);  /* #9A7259 */
+}
+
+.text-softBlack {
+  color: hsl(25, 25%, 25%);  /* #534741 */
+}
+
+.text-warmTan {
+  color: hsl(30, 65%, 80%);  /* #F2D0A4 */
+}
+
+.hover\:text-deepBrown:hover {
+  color: hsl(20, 30%, 40%);  /* #9A7259 */
+}
+
+.hover\:text-warmTan:hover {
+  color: hsl(30, 65%, 80%);  /* #F2D0A4 */
+}
+
+.hover\:bg-deepBrown:hover {
+  background-color: hsl(20, 30%, 40%);  /* #9A7259 */
+}
+
+.border-warmTan {
+  border-color: hsl(30, 65%, 80%);  /* #F2D0A4 */
+}
+
+.border-softBeige {
+  border-color: hsl(34, 25%, 92%);  /* #F2E8DC */
+}
